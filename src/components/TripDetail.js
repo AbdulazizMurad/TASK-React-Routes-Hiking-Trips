@@ -1,8 +1,13 @@
-import React from 'react';
-import tripsData from '../tripsData';
-
+import React from "react";
+import tripsData from "../tripsData";
+import { useParams } from "react-router-dom";
 function TripDetail() {
-  const trip = tripsData[0];
+  const { tripId } = useParams();
+
+  //calling the array of objects that contains the trips data.
+  const trip = tripsData.find((trip) => trip.id == tripId) || tripsData[0]; // we added tripsData[0]; because at beginning we dont have a selected .id
+  console.log("not found"); // .find will return an array, this array will be used down
+  console.log(trip);
   return (
     <div className="modal-dialog modal-xl">
       <div className="modal-content">
