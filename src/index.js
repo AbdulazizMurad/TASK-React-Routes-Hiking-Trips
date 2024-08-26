@@ -7,7 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import TripsList from "./components/TripsList";
 import TripDetail from "./components/TripDetail";
-
+import Nav from "./components/Nav";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,7 +16,16 @@ const router = createBrowserRouter([
   { path: "/Home", element: <Home /> },
   { path: "/TripList", element: <TripsList /> },
   {
-    path: "/TripDetail/:tripId", //details
+    path: "/TripDetail/:tripId",
+    element: <TripDetail />,
+  },
+  {
+    path: "/Hike",
+    element: <Nav />,
+  },
+
+  {
+    path: "/Trips",
     element: <TripDetail />,
   },
 ]);
